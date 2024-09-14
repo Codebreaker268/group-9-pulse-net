@@ -16,10 +16,12 @@ const ApplicationList = () => {
   return (
     <div>
       <h2>My Applications</h2>
-      <ul>
+      <ul className="list-group">
         {applications.map((application) => (
-          <li key={application.id}>
-            <p>{application.name} - {application.jobId}</p>
+          <li key={application.id} className="list-group-item d-flex justify-content-between align-items-center">
+            <div>
+              <p><strong>{application.name}</strong> - {application.jobId}</p>
+            </div>
             <Link to={`/edit-application/${application.id}`} className="btn btn-primary btn-sm">Edit Application</Link>
           </li>
         ))}

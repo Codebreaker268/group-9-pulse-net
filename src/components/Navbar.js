@@ -1,44 +1,45 @@
-// src/components/Navbar.js
 import React from 'react';
 import { Link } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css'; // Ensure Bootstrap CSS is imported
 
 const Navbar = () => {
   return (
-    <nav>
-      <ul>
-        <li><Link to="/">Home</Link></li>
-        <li><Link to="/job-listing">Job Listings</Link></li>
-        <li><Link to="/contact-us">Contact us</Link></li>
-        <li><Link to="/forum">Forum</Link></li>
-        <li><Link to="/apply"> Aplly</Link></li>
-        {/* <li><Link to="/profile">Profile</Link></li> */}
-        <li><Link to="/application-list">My applicaions</Link></li>
-        {/* <li><Link to="/edit-application"> Edit appliction</Link></li> */}
-        <li><Link to="/departments"> Departments</Link></li>
-
-      </ul>
-      <style jsx>{`
-        nav {
-          background: #333;
-          padding: 10px;
-        }
-        ul {
-          list-style: none;
-          padding: 0;
-          margin: 0;
-        }
-        li {
-          display: inline;
-          margin-right: 10px;
-        }
-        a {
-          color: white;
-          text-decoration: none;
-        }
-        a:hover {
-          text-decoration: underline;
-        }
-      `}</style>
+    <nav className="navbar navbar-expand-lg navbar-light bg-light">
+      <a className="navbar-brand" href="/">MyApp</a>
+      <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span className="navbar-toggler-icon"></span>
+      </button>
+      <div className="collapse navbar-collapse" id="navbarNav">
+        <ul className="navbar-nav">
+          <li className="nav-item">
+            <Link className="nav-link" to="/">Home</Link>
+          </li>
+          <li className="nav-item">
+            <Link className="nav-link" to="/department">Departments</Link>
+          </li>
+          <li className="nav-item">
+            <Link className="nav-link" to="/job-listings">Job Listings</Link>
+          </li>
+          <li className="nav-item">
+            <Link className="nav-link" to="/apply">Apply</Link>
+          </li>
+          <li className="nav-item">
+            <Link className="nav-link" to="/application-list">My Applications</Link>
+          </li>
+          <li className="nav-item">
+            <Link className="nav-link" to="/contact-us">Contact Us</Link>
+          </li>
+          <li className="nav-item">
+            <Link className="nav-link" to="/forum">Forum</Link>
+          </li>
+          <li className="nav-item">
+            <Link className="nav-link" to="/login">Login</Link>
+          </li>
+          <li className="nav-item">
+            <Link className="nav-link" to="/signup">Sign Up</Link>
+          </li>
+        </ul>
+      </div>
     </nav>
   );
 };

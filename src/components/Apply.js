@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css'; // Ensure Bootstrap CSS is imported
 
 function Apply() {
   const [selectedJob, setSelectedJob] = useState('');
@@ -47,32 +48,85 @@ function Apply() {
   };
 
   return (
-    <div>
-      <h2>Apply for a Job</h2>
+    <div className="container mt-4">
+      <h2 className="mb-4">Apply for a Job</h2>
       <form onSubmit={handleSubmit}>
-        <label>Job:</label>
-        <select value={selectedJob} onChange={(e) => setSelectedJob(e.target.value)}>
-          <option value="">Select a job</option>
-          <option value="1">Legal Intern</option>
-          <option value="2">Marketing Intern</option>
-          <option value="3">IT Intern</option>
-          <option value="4">Accountant</option>
-          <option value="5">HR Intern</option>
-          <option value="6">Finance Advisor</option>
-        </select>
-        <label>Name:</label>
-        <input type="text" value={name} onChange={(e) => setName(e.target.value)} />
-        <label>Email:</label>
-        <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
-        <label>Education:</label>
-        <input type="text" value={education} onChange={(e) => setEducation(e.target.value)} />
-        <label>Work Experience:</label>
-        <input type="text" value={workExperience} onChange={(e) => setWorkExperience(e.target.value)} />
-        <label>Date of Birth:</label>
-        <input type="date" value={dateOfBirth} onChange={(e) => setDateOfBirth(e.target.value)} />
-        <button type="submit">Submit Application</button>
+        <div className="form-group">
+          <label htmlFor="jobSelect">Job:</label>
+          <select
+            id="jobSelect"
+            className="form-control"
+            value={selectedJob}
+            onChange={(e) => setSelectedJob(e.target.value)}
+          >
+            <option value="">Select a job</option>
+            <option value="1">Legal Intern</option>
+            <option value="2">Marketing Intern</option>
+            <option value="3">IT Intern</option>
+            <option value="4">Accountant</option>
+            <option value="5">HR Intern</option>
+            <option value="6">Finance Advisor</option>
+          </select>
+        </div>
+
+        <div className="form-group">
+          <label htmlFor="name">Name:</label>
+          <input
+            id="name"
+            type="text"
+            className="form-control"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          />
+        </div>
+
+        <div className="form-group">
+          <label htmlFor="email">Email:</label>
+          <input
+            id="email"
+            type="email"
+            className="form-control"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+        </div>
+
+        <div className="form-group">
+          <label htmlFor="education">Education:</label>
+          <input
+            id="education"
+            type="text"
+            className="form-control"
+            value={education}
+            onChange={(e) => setEducation(e.target.value)}
+          />
+        </div>
+
+        <div className="form-group">
+          <label htmlFor="workExperience">Work Experience:</label>
+          <input
+            id="workExperience"
+            type="text"
+            className="form-control"
+            value={workExperience}
+            onChange={(e) => setWorkExperience(e.target.value)}
+          />
+        </div>
+
+        <div className="form-group">
+          <label htmlFor="dateOfBirth">Date of Birth:</label>
+          <input
+            id="dateOfBirth"
+            type="date"
+            className="form-control"
+            value={dateOfBirth}
+            onChange={(e) => setDateOfBirth(e.target.value)}
+          />
+        </div>
+
+        <button type="submit" className="btn btn-primary">Submit Application</button>
       </form>
-      {message && <p>{message}</p>}
+      {message && <div className="alert alert-info mt-3">{message}</div>}
     </div>
   );
 }
