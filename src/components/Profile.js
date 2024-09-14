@@ -7,8 +7,8 @@ function Profile() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (!user) {
-      navigate('/login'); // Redirect to login if no user info is found
+    if (!localStorage.getItem('loggedIn')) {
+      navigate('/login'); // Redirect to login if not logged in
       return;
     }
 
@@ -22,6 +22,12 @@ function Profile() {
       .catch(err => console.error('Error fetching applications:', err));
   }, [user, navigate]);
 
+  const handleLogout = () => {
+    localStorage.removeItem('loggedIn');
+    localStorage.removeItem('user');
+    navigate('/login');
+  };
+
   // Ensure user and user.fullName are valid before accessing them
   const fullName = user?.fullName || 'User';
   const firstName = fullName.split(' ')[0] || '';
@@ -31,6 +37,7 @@ function Profile() {
       <h2>Profile Page</h2>
       <h3>Welcome, {fullName}</h3>
       <p>Email: {user?.email}</p>
+      <button onClick={handleLogout}>Logout</button>
       <h3>My Applications</h3>
       {applications.length > 0 ? (
         <ul>

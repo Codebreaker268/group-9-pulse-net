@@ -1,85 +1,65 @@
 import React from 'react';
-// import './departments.css';
+import { Link } from 'react-router-dom';
+import './Department.css';
 
 const departments = [
   {
     name: "Information Technology",
-    description: "The IT department focuses on managing and developing the technical infrastructure of the company.",
-    requirements: [
-      "Proficiency in programming languages (e.g., Java, Python, etc.)",
-      "Experience with system administration and networks",
-      "Knowledge of cloud computing services",
-      "Ability to troubleshoot software and hardware issues",
-    ]
+    description: "The IT department manages our technology infrastructure and ensures all systems run smoothly.",
+    requirements: "Experience with network systems, cybersecurity knowledge, and proficiency in programming languages.",
+    vacancies: 5
   },
   {
     name: "Marketing",
-    description: "The marketing department handles the promotion and advertising strategies to increase the company's visibility and customer base.",
-    requirements: [
-      "Strong understanding of digital marketing tools",
-      "Experience in social media management",
-      "Excellent communication and content creation skills",
-      "Knowledge of market research and analytics",
-    ]
+    description: "The Marketing team promotes our brand and manages advertising campaigns to drive customer engagement.",
+    requirements: "Strong communication skills, experience in digital marketing, and knowledge of market research.",
+    vacancies: 3
   },
   {
     name: "Human Resource",
-    description: "Human Resource manages recruitment, employee relations, and ensures workplace compliance.",
-    requirements: [
-      "Experience in recruitment and talent acquisition",
-      "Knowledge of labor laws and employee regulations",
-      "Strong interpersonal and communication skills",
-      "Ability to handle employee relations and conflict resolution",
-    ]
+    description: "HR handles recruitment, employee relations, and ensures compliance with labor laws.",
+    requirements: "Experience in HR management, knowledge of labor laws, and strong interpersonal skills.",
+    vacancies: 2
   },
   {
     name: "Finance",
-    description: "The finance department oversees financial planning, budgeting, and maintaining the company's financial health.",
-    requirements: [
-      "Strong analytical and financial skills",
-      "Proficiency in financial software (e.g., QuickBooks, Excel)",
-      "Knowledge of accounting principles and standards",
-      "Ability to manage budgets and financial reports",
-    ]
+    description: "The Finance department manages budgeting, financial reporting, and investment strategies.",
+    requirements: "Proficiency in financial software, experience with budgeting and forecasting, and strong analytical skills.",
+    vacancies: 4
   },
   {
     name: "Accounts",
-    description: "This department manages the day-to-day financial transactions, including invoicing, payroll, and account reconciliation.",
-    requirements: [
-      "Proficiency in bookkeeping and accounting software",
-      "Strong organizational skills",
-      "Experience with financial reconciliation",
-      "Attention to detail and accuracy in financial reports",
-    ]
+    description: "Accounts oversees daily transactions, manages accounts receivable and payable, and ensures accurate financial records.",
+    requirements: "Experience with accounting software, attention to detail, and understanding of financial regulations.",
+    vacancies: 3
   },
   {
     name: "Legal",
-    description: "The legal department ensures the company's compliance with legal standards and handles contracts and litigation matters.",
-    requirements: [
-      "Law degree and professional legal certification",
-      "Experience in corporate law and compliance",
-      "Excellent negotiation and communication skills",
-      "Knowledge of contract law and intellectual property",
-    ]
+    description: "The Legal team provides legal guidance, manages contracts, and ensures compliance with regulations.",
+    requirements: "A degree in law, experience with contract management, and strong analytical and negotiation skills.",
+    vacancies: 2
   }
 ];
 
 const Department = () => {
   return (
-    <div>
-      <h1>Departments</h1>
-      {departments.map((department, index) => (
-        <div key={index} style={{ marginBottom: '20px' }}>
-          <h2>{department.name}</h2>
-          <p>{department.description}</p>
-          <h3>Requirements:</h3>
-          <ul>
-            {department.requirements.map((requirement, idx) => (
-              <li key={idx}>{requirement}</li>
-            ))}
-          </ul>
-        </div>
-      ))}
+    <div className="department-container">
+      <div className="department-header">
+        <h1>DEPARTMENTS</h1>
+      </div>
+      <ul className="department-list">
+        {departments.map((dept, index) => (
+          <li key={index} className="department-item">
+            <h2>{dept.name}</h2>
+            <p><strong>Description:</strong> {dept.description}</p>
+            <p><strong>Requirements:</strong> {dept.requirements}</p>
+            <p><strong>Vacancies:</strong> {dept.vacancies}</p>
+          </li>
+        ))}
+      </ul>
+      <div className="apply-link">
+        <Link to="/apply">Apply Now</Link>
+      </div>
     </div>
   );
 };

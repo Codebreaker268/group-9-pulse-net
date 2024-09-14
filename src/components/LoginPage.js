@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-// import './LoginPage.css'; // Ensure you have corresponding CSS for styling
+import './LoginPage.css'; // Ensure you have corresponding CSS for styling
 
 function LoginPage() {
   const [email, setEmail] = useState('');
@@ -27,24 +27,27 @@ function LoginPage() {
   return (
     <div className="login-container">
       <div className="login-box">
-        <h2>PulseNet LOGIN</h2>
+        <h2 className="login-heading">PulseNet LOGIN</h2>
         {error && <p className="error-message">{error}</p>}
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className="login-form">
           <input
             type="email"
             placeholder="Email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
+            className="login-input"
           />
           <input
             type="password"
             placeholder="Password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
+            className="login-input"
           />
-          <button type="submit">Login</button>
-          <p>
-            <Link to="/signup">Sign Up</Link> | <Link to="/forgot-password">Forgot Password?</Link>
+          <button type="submit" className="login-button">Login</button>
+          <p className="login-footer">
+            <Link to="/signup" className="login-link">Sign Up</Link> | 
+            <Link to="/forgot-password" className="login-link">Forgot Password?</Link>
           </p>
         </form>
       </div>

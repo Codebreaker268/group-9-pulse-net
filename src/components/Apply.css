@@ -1,0 +1,111 @@
+/* Apply.css */
+
+.apply-container {
+    background: #f4f7f6;
+    border-radius: 8px;
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .apply-heading {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+  
+  .apply-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .apply-form-group {
+    margin-bottom: 1.5rem;
+  }
+  
+  .apply-form-label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: #555;
+  }
+  
+  .apply-form-control {
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding: 0.75rem;
+    font-size: 1rem;
+  }
+  
+  .apply-form-control:focus {
+    border-color: #0654a7;
+    box-shadow: 0 0 0 0.2rem rgba(6, 84, 167, 0.25);
+    outline: none;
+  }
+  
+  .education-group, .work-experience-group {
+    margin-bottom: 1rem;
+  }
+  
+  .btn-secondary {
+    background-color: #e0e0e0;
+    border: none;
+    color: #333;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .btn-secondary:hover {
+    background-color: #d5d5d5;
+    transform: translateY(-1px);
+  }
+  
+  .btn-danger {
+    background-color: #dc3545;
+    border: none;
+    color: #fff;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .btn-danger:hover {
+    background-color: #c82333;
+    transform: translateY(-1px);
+  }
+  
+  .apply-btn-primary {
+    background-color: #0654a7;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: 1rem;
+  }
+  
+  .apply-btn-primary:hover {
+    background-color: #004a8c;
+    transform: translateY(-2px);
+  }
+  
+  .apply-alert {
+    border-radius: 5px;
+    padding: 1rem;
+    font-size: 1rem;
+  }
+  
+  .apply-alert-info {
+    background-color: #e3f2fd;
+    color: #0654a7;
+  }
+  

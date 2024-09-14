@@ -1,0 +1,116 @@
+/* Home.css */
+
+.home-container {
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.8); /* Semi-transparent white background for the content area */
+    color: #333;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 700px;
+    margin: auto;
+    position: relative;
+    z-index: 1; /* Ensures content is above the background */
+  }
+  
+  .home-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('/src/IMAGES/abstract-telecommunications-technology-digital-pattern-background-vector.jpg') no-repeat center center fixed;
+    background-size: cover;
+    z-index: -1; /* Places background behind content */
+  }
+  
+  .home-container h1 {
+    font-size: 2rem;
+    color: #00796b; /* Teal color for the heading */
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  
+  .home-container p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    padding: 0 0.5rem;
+  }
+  
+  .home-container p strong {
+    color: #004d40; /* Darker teal for emphasized text */
+    font-size: 1.1rem;
+  }
+  
+  .home-container a {
+    color: #00796b; /* Teal color for links */
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .home-container a:hover {
+    text-decoration: underline;
+    color: #004d40; /* Darker teal on hover */
+  }
+  
+  .button {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    margin: 1rem 0;
+    background-color: #004d40; /* Dark teal background */
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  .button:hover {
+    background-color: #00796b; /* Teal background on hover */
+  }
+  
+  .quick-links {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 2rem;
+  }
+  
+  .quick-links a {
+    font-size: 1rem;
+    color: #004d40;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border: 1px solid #004d40;
+    border-radius: 5px;
+  }
+  
+  .quick-links a:hover {
+    background-color: #004d40;
+    color: #ffffff;
+  }
+  
+  @media (max-width: 768px) {
+    .home-container {
+      padding: 1.5rem;
+    }
+  
+    .home-container h1 {
+      font-size: 1.8rem;
+    }
+  
+    .home-container p {
+      font-size: 0.9rem;
+    }
+  
+    .quick-links {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .quick-links a {
+      margin: 0.5rem 0;
+    }
+  }
+  

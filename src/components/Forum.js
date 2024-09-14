@@ -1,47 +1,46 @@
-// src/components/Forum.js
 import React, { useState } from 'react';
+import './Forum.css'; // Ensure you have corresponding CSS for styling
 
 function Forum() {
   const [articles, setArticles] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
 
-  // Function to fetch news articles from the NewsAPI
-  const fetchNewsArticles = () => {
+  const fetchNewsArticles = async () => {
     setLoading(true);
-    fetch("https://jsonplaceholder.typicode.com/posts")
-      .then(response => response.json()) // Parse the response as JSON
-      .then(data => {
-        setArticles(data); // Use the data directly
-        setLoading(false);
-      })
-      .catch((error) => {
-        console.error("Error fetching news articles:", error);
-        setLoading(false);
-      });
+    try {
+      const response = await fetch('https://newsapi.org/v2/top-headlines?country=us&apiKey=894e73d75f47430798c8672459f7ca7b');
+      if (!response.ok) throw new Error('Failed to fetch news articles');
+      const data = await response.json();
+      setArticles(data.articles);
+    } catch (error) {
+      setError('Error fetching news articles');
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
-    <div>
+    <div className="forum-container">
       <h1>Forum - Latest News</h1>
       <button onClick={fetchNewsArticles}>Get Latest News</button>
 
       {loading && <p>Loading news...</p>}
+      {error && <p className="error-message">{error}</p>}
 
       {articles.length > 0 && (
-        <ul>
+        <ul className="article-list">
           {articles.map((article, index) => (
-            <li key={index}>
+            <li key={index} className="article-item">
               <h2>{article.title}</h2>
               <p>{article.description}</p>
-              <a href={article.url} target="_blank" rel="noopener noreferrer">
-                Read more
-              </a>
+              <a href={article.url} target="_blank" rel="noopener noreferrer">Read more</a>
             </li>
           ))}
         </ul>
       )}
 
-      {articles.length === 0 && !loading && <p>No articles to display.</p>}
+      {articles.length === 0 && !loading && !error && <p>No articles to display.</p>}
     </div>
   );
 }

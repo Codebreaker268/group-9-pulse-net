@@ -11,7 +11,7 @@ import Apply from './components/Apply';
 import Department from './components/Department';
 import LoginPage from './components/LoginPage';
 import SignupPage from './components/SignupPage'; // Import SignupPage component
-import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 const App = () => {
   return (
