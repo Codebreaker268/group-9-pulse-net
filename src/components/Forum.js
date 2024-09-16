@@ -9,7 +9,7 @@ function Forum() {
   const fetchNewsArticles = async () => {
     setLoading(true);
     try {
-      const response = await fetch('https://newsapi.org/v2/top-headlines?country=us&apiKey=894e73d75f47430798c8672459f7ca7b');
+      const response = await fetch('https://newsapi.org/v2/top-headlines?country=us&apiKey=7b2e0a7e22654066baa8374fa8d7c856');
       if (!response.ok) throw new Error('Failed to fetch news articles');
       const data = await response.json();
       setArticles(data.articles);

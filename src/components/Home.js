@@ -24,7 +24,7 @@ function Home() {
           The employment will be done purely based on merit where the most qualified applicant for the job will get it.
         </p>
         <div className="quick-links">
-          <a href="/department">Explore Job Listings</a>
+          <a href="/department">Explore departments</a>
           <a href="/apply">Apply Now</a>
         </div>
       </div>

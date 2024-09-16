@@ -20,7 +20,7 @@ const App = () => {
       <div className="container mt-4">
         <Routes>
           <Route path="/" element={<Home />} />
-          {/* <Route path="/job-listings" element={<JobListings />} /> */}
+          
           <Route path="/contact-us" element={<ContactUs />} />
           <Route path="/apply" element={<Apply />} />
           <Route path="/application-list" element={<ApplicationList />} />
