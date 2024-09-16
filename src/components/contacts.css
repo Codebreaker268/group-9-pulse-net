@@ -1,0 +1,26 @@
+.contact-container {
+  background-color: #f9f9f9;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  max-width: 400px;
+  margin: 20px auto;
+  font-family: Arial, sans-serif;
+}
+
+.contact-container p {
+  color: #333;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.contact-container strong {
+  color: #0654a7; /* Change to your preferred highlight color */
+  font-weight: bold;
+}
+
+.contact-container p:last-child {
+  margin-top: 20px;
+  font-style: italic;
+  color: #555;
+}
