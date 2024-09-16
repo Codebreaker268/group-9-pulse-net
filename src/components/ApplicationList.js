@@ -7,7 +7,7 @@ const ApplicationList = () => {
 
   useEffect(() => {
     // Fetch the list of applications
-    fetch('http://localhost:5000/applications')
+    fetch('https://json-server-template-po0m.onrender.com/applications')
       .then(response => response.json())
       .then(data => setApplications(data))
       .catch((error) => console.log('Error fetching applications:', error));

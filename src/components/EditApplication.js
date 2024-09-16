@@ -14,14 +14,14 @@ const EditApplication = () => {
 
   useEffect(() => {
     // Fetch the existing application data
-    fetch(`http://localhost:5000/applications/${applicationId}`)
+    fetch(`https://json-server-template-po0m.onrender.com/applications/${applicationId}`)
       .then(response => response.json())
       .then(data => {
         setApplication(data);
         setName(data.name || '');
         setEmail(data.email || '');
         setEducation(data.education || '');
-        setWorkExperience(data.workExperience || '');
+        setWorkExperience(data.workExperience || ''); // Initialize as a string
         setDateOfBirth(data.dateOfBirth || '');
       })
       .catch((error) => console.log('Error fetching application:', error));
@@ -35,11 +35,11 @@ const EditApplication = () => {
       name,
       email,
       education: education.substring(0, 50),
-      workExperience: workExperience.substring(0, 200),
+      workExperience: String(workExperience).substring(0, 200), // Ensure it's a string
       dateOfBirth
     };
 
-    fetch(`http://localhost:5000/applications/${applicationId}`, {
+    fetch(`https://json-server-template-po0m.onrender.com/applications/${applicationId}`, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(updatedApplication)

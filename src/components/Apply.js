@@ -59,7 +59,7 @@ function Apply() {
       status: 'submitted'
     };
 
-    fetch('http://localhost:5000/applications', {
+    fetch('https://json-server-template-po0m.onrender.com/applications', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(application)
