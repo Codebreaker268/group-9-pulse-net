@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Navbar from './components/Navbar'; // Import the Navbar component
 import Home from './components/Home';
-import JobListings from './components/JobListings';
+// import JobListings from './components/JobListings';
 import ContactUs from './components/ContactUs';
 import Forum from './components/Forum';
 import ApplicationList from './components/ApplicationList'; // Import ApplicationList component
@@ -20,7 +20,7 @@ const App = () => {
       <div className="container mt-4">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/job-listings" element={<JobListings />} />
+          {/* <Route path="/job-listings" element={<JobListings />} /> */}
           <Route path="/contact-us" element={<ContactUs />} />
           <Route path="/apply" element={<Apply />} />
           <Route path="/application-list" element={<ApplicationList />} />
